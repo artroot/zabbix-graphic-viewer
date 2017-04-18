@@ -1,5 +1,5 @@
 # zabbix-graphic-viewer
-Module on JavaScript which helps to display zabbix graphics and to manage it in your app.
+- Module on JavaScript which helps to display zabbix graphics and to manage it in your app.
 ==========
 
 ## Add to your index ##
@@ -36,5 +36,5 @@ graph.create();
 *Some work screenshots:*
 
 ![alt text](http://i.piccy.info/i9/01340d3eaa7c41c444189d2c5f9597ee/1492542969/52312/1138734/Screenshot_105_.png "Hour") 
-![alt text](http://i.piccy.info/i9/f8e92fa7c000926021ffec8b78e698db/1492543056/50742/1138734/Screenshot_106_.png "Day")  
+![alt text](http://i.piccy.info/i9/7449e3dd5d4a595c4ff58e219f9c78b9/1492543570/50742/1138734/Screenshot_106_.png "Day")  
 ![alt text](http://i.piccy.info/i9/830eb9b3b2279616b15b9a7bcbcd85cc/1492543093/56033/1138734/Screenshot_107_.png "Month") 
