@@ -1,6 +1,5 @@
 # zabbix-graphic-viewer
-- Module on JavaScript which helps to display zabbix graphics and to manage it in your app.
-==========
+#### Module on JavaScript which helps to display zabbix graphics and to manage it in your app.
 
 ## Add to your index ##
 ```
