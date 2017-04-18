@@ -1,5 +1,5 @@
 # zabbix-graphic-viewer
-Module on JavaScriph which helps to display zabbix graphics and management it.
+Module on JavaScript which helps to display zabbix graphics and management it.
 ==========
 
 ## Add to your index ##
