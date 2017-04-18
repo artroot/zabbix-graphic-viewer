@@ -8,8 +8,12 @@ Module on JavaScriph which helps to display zabbix graphics and management it.
 <script type="text/javascript" src="js/graph_compress.js"></script>
 ```
 ## Example ##
+Add the element where graphics will display:
 ```
 <div id="graph_<Switch port or another identificator>"></div>
+```
+Create instance of a class Graphic with your JSON data:
+```
 <script>
 var data = {
         'port' : <Switch port or another identificator, div element id must be as this one>,
