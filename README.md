@@ -1,12 +1,12 @@
 # zabbix-graphic-viewer
 #### Module on JavaScript which helps to display zabbix graphics and to manage it in your app.
 
-## Add to your index ##
+### Add to your index ##
 ```
 <link rel="stylesheet" type="text/css" href="css/graph.css">
 <script type="text/javascript" src="js/graph_compress.js"></script>
 ```
-## Example ##
+### Example ##
 Add the element where graphics will display:
 ```
 <div id="graph_<Switch port or another identificator>"></div>
