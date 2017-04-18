@@ -1,6 +1,10 @@
 # zabbix-graphic-viewer
 #### Module on JavaScript which helps to display zabbix graphics and to manage it in your app.
 
+- Hour, day and month modes;
+- Back or front time control;
+- Auto update.
+
 ### Add to your index ##
 ```HTML
 <link rel="stylesheet" type="text/css" href="css/graph.css">
@@ -9,13 +13,13 @@
 ### Example ##
 Add the element where graphics will display:
 ```HTML
-<div id="graph_<Switch port or another identificator>"></div>
+<div id="graph_<Switch port or another uniq identificator>"></div>
 ```
 Create instance of a class Graphic with your JSON data:
 ```javascript
 <script>
 var data = {
-        'port' : <Switch port or another identificator, div element id must be as this one>,
+        'port' : <Switch port or another uniq identificator, div element id must be as this one>,
         'period' : <Zabbix graphic period in seconds>,
         'stime' : <Start display time, for example (YYYYMMDDHHmmss): 20170418214112>,
         'width' : <Width of graphic image>,
