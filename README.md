@@ -17,7 +17,7 @@ Create instance of a class Graphic with your JSON data:
 <script>
 var data = {
         'port' : <Switch port or another identificator, div element id must be as this one>,
-        'period' : <Zabbix graphic period in sec.>,
+        'period' : <Zabbix graphic period in seconds>,
         'stime' : <Start display time, for example (YYYYMMDDHHmmss): 20170418214112>,
         'width' : <Width of graphic image>,
         'height' : <Height of graphic image>,
