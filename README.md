@@ -36,6 +36,37 @@ var graph = new Graphic(data);
 graph.create();
 </script>
 ```
+The script will add the following to div body: 
+```HTML
+<div id="graph_1" class="zabbix-graphics">
+        <ul class="pagination">
+                <li mode="hour">
+                        <a href="javascript:void(0)" mode="hour" aria-label="Previous">
+                                <span>«</span>
+                        </a>
+                </li>
+                <li class="active" period="3600" mode="hour">
+                        <a href="javascript:void(0)">Час</a>
+                </li>
+                <li class="" period="86400" mode="day">
+                        <a href="javascript:void(0)">День</a>
+                </li>
+                <li class="" period="2592000" mode="month">
+                        <a href="javascript:void(0)">Месяц</a>
+                </li>
+                <li mode="hour">
+                        <a href="javascript:void(0)" mode="hour" aria-label="Next">
+                                <span>»</span>
+                        </a>
+                </li>
+        </ul>
+        <p class="timer">0</p>
+        <figure>
+                <img src="zabbix?graphid=12782&amp;period=3600&amp;stime=20170418210829&amp;width=400&amp;height=150" graphid="12782">           </figure>
+</div>
+```
+
+
 *Some work screenshots:*
 
 ![alt text](http://i.piccy.info/i9/11fde9dfcd7689effe05c46226f44f71/1492582907/51366/1138734/Screenshot_105_.png "Hour Mode") 
