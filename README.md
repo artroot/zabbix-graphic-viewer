@@ -36,7 +36,7 @@ var graph = new Graphic(data);
 graph.create();
 </script>
 ```
-The script will add the following to div body: 
+The script will add the next structure into div body: 
 ```HTML
 <div id="graph_1" class="zabbix-graphics">
         <ul class="pagination">
