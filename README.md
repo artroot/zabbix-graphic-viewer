@@ -24,6 +24,7 @@ var data = {
         'stime' : <Start display time, for example (YYYYMMDDHHmmss): 20170418214112>,
         'width' : <Width of graphic image>,
         'height' : <Height of graphic image>,
+        'zabbix_path' : <Zabbix api controller/action path>,
         'graphids' : [
           {
               'graphid' : <Zabbix graphic identificator>
