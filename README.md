@@ -38,6 +38,6 @@ graph.create();
 ```
 *Some work screenshots:*
 
-![alt text](http://i.piccy.info/i9/01340d3eaa7c41c444189d2c5f9597ee/1492542969/52312/1138734/Screenshot_105_.png "Hour") 
-![alt text](http://i.piccy.info/i9/7449e3dd5d4a595c4ff58e219f9c78b9/1492543570/50742/1138734/Screenshot_106_.png "Day")  
-![alt text](http://i.piccy.info/i9/830eb9b3b2279616b15b9a7bcbcd85cc/1492543093/56033/1138734/Screenshot_107_.png "Month") 
+![alt text](http://i.piccy.info/i9/11fde9dfcd7689effe05c46226f44f71/1492582907/51366/1138734/Screenshot_105_.png "Hour Mode") 
+![alt text](http://i.piccy.info/i9/ea2a18f352a3a27e70356249e88470b7/1492582956/50153/1138734/Screenshot_106_.png "Day Mode")  
+![alt text](http://i.piccy.info/i9/262b84ae31964b61268480ae6c4ba5f7/1492582986/55370/1138734/Screenshot_107_.png "Month Mode") 
