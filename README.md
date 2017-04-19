@@ -62,7 +62,8 @@ The script will add the next structure into div body:
         </ul>
         <p class="timer">0</p>
         <figure>
-                <img src="zabbix?graphid=12782&amp;period=3600&amp;stime=20170418210829&amp;width=400&amp;height=150" graphid="12782">           </figure>
+                <img src="zabbix?graphid=12782&amp;period=3600&amp;stime=20170418210829&amp;width=400&amp;height=150" graphid="12782">
+        </figure>
 </div>
 ```
 
