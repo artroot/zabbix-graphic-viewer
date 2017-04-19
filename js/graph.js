@@ -1,15 +1,11 @@
-﻿function Graphic(data, defaultMode) {
+﻿/**
+ * Created by art on 19.04.17.
+ */
+
+function Graphic(data, defaultMode) {
     if (data instanceof Object) {
         this.mode = (defaultMode == null ? 'hour' : defaultMode);
         this.autoLoad = true;
-
-        this.graphids = data.graphids;
-        this.port = data.port;
-        this.period = data.period;
-        this.stime = data.stime;
-        this.width = data.width;
-        this.height = data.height;
-
         this.modes = [
             {
                 'name': 'Час',
@@ -27,12 +23,23 @@
                 'period': 2592000
             }
         ];
+
+        if (data.period == 'undefined' || data.period == null) this.period = this.modes[0].period;
+        else this.period = data.period;
+
+        this.stime = data.stime;
+        this.graphids = data.graphids;
+        this.port = data.port;
+        this.width = ((data.width == 'undefined' || data.width  == null) ? 400 : data.width);
+        this.height = ((data.height == 'undefined' || data.height  == null) ? 150 : data.height);
+        this.zabbix_path = ((data.zabbix_path == 'undefined' || data.zabbix_path  == null) ? 'zabbix' : data.zabbix_path);
+
         this.source = document.getElementById('graph_' + this.port);
 	this.source.className='zabbix-graphics';
     } else Console.error('No data!');
 
     this.getLnk = function (data) {
-        var lnk = 'zabbix';
+        var lnk = this.zabbix_path;
         data.forEach(function (item, i) {
             lnk = lnk + (i == 0 ? '?' : '&');
             lnk = lnk + item.name + '=' + item.value;
@@ -103,6 +110,9 @@
 
     this.createGraphic = function () {
         self = this;
+
+        if (this.stime == 'undefined' || this.stime == null){ this.stime = new Date().decDate(this.mode, 1); this.stime = this.stime.outNewDate(true); }
+
         this.graphics = [];
         var stime = new Date(this.stime);
         this.graphids.forEach(function (item) {
@@ -147,23 +157,13 @@
                         {'name': 'graphid', 'value': item.getAttribute('graphid')},
                         {'name': 'period', 'value': self.period},
                         {
-                            'name': 'stime', 'value': stime.getUTCFullYear() +
-                        ("0" + (stime.getUTCMonth() + 1)).slice(-2) +
-                        ("0" + stime.getUTCDate()).slice(-2) +
-                        ("0" + stime.getHours()).slice(-2) +
-                        ("0" + stime.getUTCMinutes()).slice(-2) +
-                        ("0" + stime.getUTCSeconds()).slice(-2)
+                            'name': 'stime', 'value': stime.outNewDateForZabbixFormat(true)
                         },
                         {'name': 'width', 'value': self.width},
                         {'name': 'height', 'value': self.height}
                     ]))
                 });
-                self.stime = stime.getUTCFullYear() + '-' +
-                    ("0" + (stime.getUTCMonth() + 1)).slice(-2) + '-' +
-                    ("0" + stime.getUTCDate()).slice(-2) + 'T' +
-                    ("0" + stime.getHours()).slice(-2) + ':' +
-                    ("0" + stime.getUTCMinutes()).slice(-2) + ':' +
-                    ("0" + stime.getUTCSeconds()).slice(-2);
+                self.stime = stime.outNewDate(true);
             }
         }, 30000, self, timer);
     };
@@ -217,7 +217,7 @@
     this.goFront = function () {
         var self = this;
         var stime = new Date(this.stime).incDate(self.mode, 1);
-        var stimeNow = new Date().decDate(this.mode, 1);
+        var stimeNow = new Date().incDate(this.mode, 0);
 
         var s_stime = stime.getYear() + ("0" + (stime.getUTCMonth() + 1)).slice(-2) + ("0" + stime.getUTCDate()).slice(-2) + ("0" + stime.getUTCHours()).slice(-2) + ("0" + stime.getUTCMinutes()).slice(-2);
         var s_stimeNow = stimeNow.getYear() + ("0" + (stimeNow.getUTCMonth() + 1)).slice(-2) + ("0" + stimeNow.getUTCDate()).slice(-2) + ("0" + stimeNow.getHours()).slice(-2) + ("0" + stimeNow.getUTCMinutes()).slice(-2);
@@ -272,20 +272,21 @@
         return this;
     };
 
-    Date.prototype.outNewDateForZabbixFormat = function () {
+
+    Date.prototype.outNewDateForZabbixFormat = function (now) {
         return this.getUTCFullYear() +
             ("0" + (this.getUTCMonth() + 1)).slice(-2) +
             ("0" + this.getUTCDate()).slice(-2) +
-            ("0" + this.getUTCHours()).slice(-2) +
+            ("0" + (now ? this.getHours() : this.getUTCHours())).slice(-2) +
             ("0" + this.getUTCMinutes()).slice(-2) +
             ("0" + this.getUTCSeconds()).slice(-2);
     };
 
-    Date.prototype.outNewDate = function () {
+    Date.prototype.outNewDate = function (now) {
         return this.getUTCFullYear() + '-' +
             ("0" + (this.getUTCMonth() + 1)).slice(-2) + '-' +
             ("0" + this.getUTCDate()).slice(-2) + 'T' +
-            ("0" + this.getUTCHours()).slice(-2) + ':' +
+            ("0" + (now ? this.getHours() : this.getUTCHours())).slice(-2) + ':' +
             ("0" + this.getUTCMinutes()).slice(-2) + ':' +
             ("0" + this.getUTCSeconds()).slice(-2);
     };
